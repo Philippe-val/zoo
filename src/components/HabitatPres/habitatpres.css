@@ -1,0 +1,33 @@
+
+.savane-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.savane-title {
+    
+    font-size: 50px;
+    color: #0f0e0e;
+    margin-bottom: 40px;
+}
+.savane-para {
+    
+    display:flex;  
+    justify-content: space-between; 
+    align-items: flex-start;
+    flex-wrap: nowrap;   
+}
+.savane-photo {
+    
+    width: 60%;
+}
+.savane-texte {
+    display: flex;
+    padding: 100px; 
+    justify-content: space-between;    
+    align-items:flex-start;
+    flex-direction: column;
+    width: 50%;
+}
