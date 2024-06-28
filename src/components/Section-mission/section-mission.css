@@ -1,5 +1,5 @@
-.section-prestation {
-  background-image: url("../../../public/image/fond.png");
+.section-mission {
+  background-image: url("../../../public/image/vert3.jpeg");
   background-repeat: no-repeat;
   background-position: top;
   height: 600px;
@@ -12,18 +12,9 @@
   border-radius: 10px;
   margin:40px;
   flex-wrap: wrap;
-
-}
-.prestation-jumbotron {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 70%;
-  height: 400px;
-
   
 }
-.prestation-title {
+.mission-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,8 +22,14 @@
   height: 100px;
   margin-top:50px;
 }
-.prestation-service {
+.mission-service {
   display: flex;
   text-align: center;
 }
-
+.mission-jumbotron {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  height: 400px;
+}

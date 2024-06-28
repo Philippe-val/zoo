@@ -1,75 +1,70 @@
 import "./avis.css"
 import React, { useState } from 'react';
 
-
-
-
-function App() {
+function AvisForm() {
   const [pseudo, setPseudo] = useState('');
-  const [commentaire, setCommentaire] = useState('');
-  const [message, setMessage] = useState('');
+  const [avis, setAvis] = useState('');
+  const [avisList, setAvisList] = useState([]);
 
-  const handlePseudoChange = (event) => {
-    setPseudo(event.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newAvis = { pseudo, avis, status: 'pending' };
+    setAvisList([...avisList, newAvis]);
+    setPseudo('');
+    setAvis('');
   };
 
-  const handleCommentaireChange = (event) => {
-    setCommentaire(event.target.value);
-  };
-
-  const handleAccept = () => {
-    setMessage(`Commentaire accepté : "${commentaire}" par ${pseudo}.`);
-  };
-
-  const handleReject = () => {
-    setMessage(`Commentaire refusé : "${commentaire}" par ${pseudo}.`);
+  const handleStatusChange = (index, newStatus) => {
+    const updatedAvisList = avisList.map((item, i) =>
+      i === index ? { ...item, status: newStatus } : item
+    );
+    setAvisList(updatedAvisList);
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Formulaire d'avis</h1>
-      <div>
-        <label>
-          Pseudo:
-          <input
-            type="text"
-            value={pseudo}
-            onChange={handlePseudoChange}
-            placeholder="Entrez votre pseudo"
-            style={{ padding: '10px', margin: '10px 0', fontSize: '16px' }}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Commentaire:
-          <textarea
-            value={commentaire}
-            onChange={handleCommentaireChange}
-            placeholder="Entrez votre commentaire"
-            style={{ padding: '10px', margin: '10px 0', fontSize: '16px', width: '100%', height: '100px' }}
-          />
-        </label>
-      </div>
-      <div style={{ marginTop: '20px' }}>
-        <button onClick={handleAccept} style={{ marginRight: '10px', padding: '10px', fontSize: '16px' }}>
-          Accepter
-        </button>
-        <button onClick={handleReject} style={{ padding: '10px', fontSize: '16px' }}>
-          Refuser
-        </button>
-      </div>
-      {message && (
-        <div style={{ marginTop: '20px', fontSize: '18px', fontWeight: 'bold' }}>
-          {message}
+    <div className="first-title-formulaire-avis">
+      <h1 className="title-formulaire-avis">Formulaire d'Avis</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="text-formulaire-pseudo">
+          <label>
+            Pseudo:
+            <input
+              type="text"
+              value={pseudo}
+              onChange={(e) => setPseudo(e.target.value)}
+              required
+            />
+          </label>
         </div>
-      )}
+        <div className="avis-formulaire-avis">
+          <label>
+            Avis:
+            <textarea
+              value={avis}
+              onChange={(e) => setAvis(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <button type="submit">Soumettre</button>
+      </form>
+      <h2>Liste des Avis</h2>
+      <ul>
+        {avisList.map((item, index) => (
+          <li key={index}>
+            <strong>{item.pseudo}</strong>: {item.avis} (Status: {item.status})
+            <button onClick={() => handleStatusChange(index, 'accepted')}>Accepter</button>
+            <button onClick={() => handleStatusChange(index, 'refused')}>Refuser</button>
+            <button onClick={() => handleStatusChange(index, 'diffused')}>Diffuser</button>
+          </li>
+        ))}
+      </ul>
     </div>
+    
   );
 }
 
-export default App;
-
+export default AvisForm;
 
 
 

@@ -4,7 +4,7 @@ import "./thumb.css";
 const Thumb = ({ thumb }) => {
   return (
     <div class="mb-3 thumb-card">
-      <Link to={thumb.link}>
+      <Link to="/habitats">
         <div class="thumb-card-body">
           <h6 class="thumb-card-title">{thumb.title}</h6>
         </div>

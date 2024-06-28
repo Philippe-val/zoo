@@ -12,7 +12,7 @@ const Habitats = () => {
         Les zoos deviennent ainsi des plateformes éducatives dynamiques, inspirant une nouvelle génération de défenseurs de l'environnement prêts à protéger notre précieux patrimoine naturel. </p>
       <div class="container ">
       {data.habitats.map((habitat) => (
-        <HabitatCard habitat={habitat} />
+        <HabitatCard key={habitat.id} habitat={habitat} />
       ))}
 
       </div>

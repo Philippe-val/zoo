@@ -1,0 +1,86 @@
+.petitrain-service {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 40px auto;
+  background-color: white;
+  justify-content: space-between;
+  padding: 10px;
+}
+.bloc-travel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+ 
+}
+.brown {
+  background-color: rgb(103, 85, 85);
+  color: black;
+}
+.black {
+  background-color: #000;
+  color: white;
+}
+
+
+
+.bloc-para {
+  display: flex;
+ 
+  justify-content: flex-start;
+  align-items: center;
+  width: 380px;
+  height: 400px;
+  margin: 10px;
+}
+.bloc-second {
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  height: 100%;
+}
+.bloc-photo {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.photo-petitrain {
+  width: 100%;
+  height: 100%;
+}
+.bloc-petitrain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.bloc-para {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}.bloc-journey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.white {
+  color: white;
+  background-color: rgb(224, 136, 73) ;
+  
+}

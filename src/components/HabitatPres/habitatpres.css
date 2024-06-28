@@ -1,33 +1,36 @@
 
-.savane-container {
+.habitat-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    width: 90%;
+    height: 50vh;
+    margin: 0 auto;
+}
+.habitat-title{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
 }
 
-.savane-title {
-    
-    font-size: 50px;
+.habitat-title h1 {
     color: #0f0e0e;
-    margin-bottom: 40px;
-}
-.savane-para {
     
+}
+.habitat-texte {
+    width: 45%;
     display:flex;  
     justify-content: space-between; 
     align-items: flex-start;
     flex-wrap: nowrap;   
 }
-.savane-photo {
-    
-    width: 60%;
+.habitat-photo {  
+    width: 45%;
 }
-.savane-texte {
-    display: flex;
-    padding: 100px; 
-    justify-content: space-between;    
-    align-items:flex-start;
-    flex-direction: column;
-    width: 50%;
+.habitat-photo img {
+    width: 70%;
+    height:auto;
+}
+.habitat-para { 
+    padding: 10px; 
 }

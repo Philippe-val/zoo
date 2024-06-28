@@ -1,0 +1,87 @@
+.resto-service {
+  display:flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 40px auto;
+  background-color: white;
+  justify-content: space-between;
+padding: 10px;
+}
+.bloc-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+.bloc-para-resto-service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 10px
+
+}.yellow-dark {
+    background-color: rgb(227, 178, 87);
+    color: black;
+  
+  }
+  .black{
+    background-color: #000;
+    color:white;
+  }
+  .bloc-image image{
+    
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    margin: 10px;
+    padding: 10px; 
+  
+  }
+  
+  
+  
+  .bloc-write{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 380px;
+    height: 400px;
+    margin:10px;
+  }
+  .bloc-title{
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .photo-buffet{
+    width: 400px;
+    height:200px;
+    padding: 10px;
+  }
+  .photo-serveuse{
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+  }
+  .photo-terrasse{
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+  }
+
+    
+  
+ 
+  
+  

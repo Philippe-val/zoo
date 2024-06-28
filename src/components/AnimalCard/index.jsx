@@ -1,10 +1,21 @@
 import React from 'react'
 import './animalcard.css'
 
-const AnimalCard = ({ animal }) => {
+import { Link } from 'react-router-dom'
+const AnimalCard= ({animal}) => {
   return (
-    <div className="title"> </div>
+    <div class="card  mb-3 animal-card" >
+    <Link  
+     to="/animal" 
+    state={{animal:animal}}
+    >
+       <div class=" animal-card-header"> <img src={animal.img} alt="" /> </div>
+       <div class="animal-card-body">
+         <h4 class="animal-card-title">{animal.title}</h4>
+       
+       </div>
+       </Link>
+    </div>
   )
 }
-
 export default AnimalCard
