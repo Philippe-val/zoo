@@ -8,17 +8,15 @@ const Animal = () => {
 const {animal} = location.state;
  
     return (
-      <div className="container-animal">
-        <h1>{animal.title}</h1>
-        <img src={animal.img} alt="" />
-        <p>{animal.description}</p>
-        <p>{animal.santé}</p>
-        <p>{animal.alimentation}</p>
-        <p>{animal.nouriture}</p>
-        <p>{animal.soins}</p>
+    
+      
+      <div>
+        
+        </div>
 
       
       
-</div>
+
+        
     )}
       export default Animal
