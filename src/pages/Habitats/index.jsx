@@ -1,7 +1,33 @@
 import "./habitats.css"
-import data from "../../data/data.json" 
+import axios from "axios"
+import React, { useEffect, useState } from "react"
 import HabitatCard from "../../components/HabitatCard"
+
+
 const Habitats = () => {
+
+const [habitats, setHabitats] = useState()
+
+useEffect(() => {
+  let config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: "http://localhost:3000/api/habitats",
+    headers: {
+        "Content-Type": "application/json",
+    }
+    
+};
+axios
+            .request(config)
+            .then((response) => {
+                setHabitats(response.data.habitats);
+            })
+            .catch((error) => {
+                console.log(error);
+            });  
+}, [])
+
   return (
     <div>
       <div> <h1 class='title-hight'>LES HABITATS</h1>
@@ -11,7 +37,7 @@ const Habitats = () => {
         Zn outre, les visiteurs peuvent observer les effets des changements climatiques et de la destruction des habitat, renforçant l'importance des efforts de conservation.
         Les zoos deviennent ainsi des plateformes éducatives dynamiques, inspirant une nouvelle génération de défenseurs de l'environnement prêts à protéger notre précieux patrimoine naturel. </p>
       <div class="container ">
-      {data.habitats.map((habitat) => (
+      {habitats && habitats.map((habitat) => (
         <HabitatCard key={habitat.id} habitat={habitat} />
       ))}
 
