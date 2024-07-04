@@ -25,7 +25,7 @@ function App() {
           <Route path="/avis" element={<Avis />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/habitats" element={<Habitats />} />
-          <Route path="/habitat" element={<Habitat />} />   
+          <Route path="/habitat/:id_habitat" element={<Habitat />} />   
           <Route path="/soigneur" element={<Soigneur />} />
           <Route path="/histoire" element={<Histoire />} />
           <Route path="/actualite" element={<Actualite />} />

@@ -21,6 +21,7 @@ useEffect(() => {
 axios
             .request(config)
             .then((response) => {
+              
                 setHabitats(response.data.habitats);
             })
             .catch((error) => {
@@ -38,7 +39,7 @@ axios
         Les zoos deviennent ainsi des plateformes éducatives dynamiques, inspirant une nouvelle génération de défenseurs de l'environnement prêts à protéger notre précieux patrimoine naturel. </p>
       <div class="container ">
       {habitats && habitats.map((habitat) => (
-        <HabitatCard key={habitat.id} habitat={habitat} />
+        <HabitatCard key={habitat.id_habitat} habitat={habitat} />
       ))}
 
       </div>
