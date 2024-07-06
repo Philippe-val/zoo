@@ -39,7 +39,7 @@ const Sectionconservation = () => {
           conflits.
         </p>
 
-        <div className="bloc-picture-picture">
+        <div className="bloc-picture picture">
           <img
             src="https://c402277.ssl.cf1.rackcdn.com/photos/10309/images/hero_small/MID_295808.jpg?1446498370"
             className="photo-intervention"

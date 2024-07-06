@@ -46,10 +46,12 @@ function AvisForm() {
             />
           </label>
         </div>
+        <div className="soumettre">
         <button type="submit">Soumettre</button>
+        </div>
       </form>
-      <h2>Liste des Avis</h2>
-      <ul>
+      <h2 className="liste-avis">Liste des Avis</h2>
+      <ul className="index">
         {avisList.map((item, index) => (
           <li key={index}>
             <strong>{item.pseudo}</strong>: {item.avis} (Status: {item.status})
@@ -57,9 +59,12 @@ function AvisForm() {
             <button onClick={() => handleStatusChange(index, 'refused')}>Refuser</button>
             <button onClick={() => handleStatusChange(index, 'diffused')}>Diffuser</button>
           </li>
+          
         ))}
       </ul>
     </div>
+   
+    
     
   );
 }
