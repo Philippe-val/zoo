@@ -1,5 +1,7 @@
 import React from 'react'
 import './habitatpres.css'
+
+
 const HabitatPres = ({ habitat }) => {
   return (
     <>
@@ -12,7 +14,7 @@ const HabitatPres = ({ habitat }) => {
           <p className='habitat-para'>{habitat.DESCRIPTION}</p> 
         </div>
         <div className='habitat-photo'>  
-            <img src={habitat.IMG2}  alt="" />  
+            <img src={`/src/assets/${habitat.IMG2}`}  alt="" />  
         </div> 
       </div>
       </>

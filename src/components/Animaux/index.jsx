@@ -2,10 +2,10 @@
 import AnimalCard from '../AnimalCard'
 import './animaux.css'
 
-const Animaux = ({ habitat }) => {
+const Animaux = ({ animaux }) => {
   return ( 
     <div className="container-animaux">
-    {habitat.animaux.map((animal) => (
+    {animaux.map((animal) => (
       <AnimalCard key={animal.title} animal={animal} />
     ))}
      </div>

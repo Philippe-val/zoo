@@ -11,6 +11,7 @@ const Habitat = () => {
   const {id_habitat} = useParams();
 
   const [habitat, setHabitat] = useState()
+  const [animaux, setAnimaux] = useState()
 
 useEffect(() => {
   let config = {
@@ -31,12 +32,34 @@ axios
             .catch((error) => {
                 console.log(error);
             });  
-}, [])
+}, [id_habitat])
+
+useEffect(() => {
+  let config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: "http://localhost:3000/api/animaux/"+id_habitat,
+    headers: {
+        "Content-Type": "application/json",
+    }
+    
+};
+axios
+            .request(config)
+            .then((response) => {
+              console.log(response)
+                setAnimaux(response.data.animaux);
+            })
+            .catch((error) => {
+                console.log(error);
+            });  
+}, [id_habitat])
     return (
       <div className="container-habitat">
       
           
        {habitat && <HabitatPres habitat={habitat}/>  }
+        {animaux && <Animaux animaux={animaux}/>  }
      
 </div>
     )}
