@@ -1,11 +1,35 @@
-import React from "react";
-import data from "../../data/data.json"
+import {useState,useEffect} from "react";
 import "./section-prestation.css";
 import PrestationCard from "../PrestationCard";
-
+import axios from "axios";
 
 
 const PrestationS = () => {
+
+  const [prestations, setPrestations] = useState()
+
+  useEffect(() => {
+    let config = {
+      method: "get",
+      maxBodyLength: Infinity,
+      url: "http://localhost:3000/api/prestation",
+      headers: {
+          "Content-Type": "application/json",
+      }
+      
+  };
+  axios
+              .request(config)
+              .then((response) => {
+               
+                  setPrestations(response.data.prestation);
+              })
+              .catch((error) => {
+                  console.log(error);
+              });  
+  }, [])
+  
+
   return <div className="section-prestation">
     <div className="prestation-title">
     <h1 className="prestation-service">Nos services</h1>
@@ -13,7 +37,7 @@ const PrestationS = () => {
 <div className="prestation-jumbotron">
 
 
-{data.prestations.map((prestation, index) => (
+{prestations && prestations.map((prestation, index) => (
   < PrestationCard key={index} prestation={prestation} />
 )
 )}

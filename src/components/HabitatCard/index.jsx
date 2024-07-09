@@ -8,7 +8,7 @@ const HabitatCard= ({habitat}) => {
      to={`/habitat/${habitat.id_habitat}`}
    
     >
-       <div class=" habitat-card-header"> <img src={habitat.IMG} alt="" /> </div>
+       <div class=" habitat-card-header"> <img src={`/${habitat.IMG}`}  alt="" /> </div>
        <div class="habitat-card-body">
          <h4 class="habitat-card-title">{habitat.TITLE}</h4>
        

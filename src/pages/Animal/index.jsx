@@ -19,7 +19,7 @@ const {animal} = location.state;
      <div class="container-animal-zoo ">
       <div class="card-animal-zoo">
         <div class="card-animal-zoo__image">
-          <img src={animal.img} alt="animal" />
+        <img src={`/${animal.IMG}`} alt="animal" />
         </div>
         
 

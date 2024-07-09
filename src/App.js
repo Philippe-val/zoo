@@ -13,8 +13,19 @@ import Actualite from "./pages/Actualite";
 import Mission from "./pages/Mission";
 import Animal from "./pages/Animal";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import SignIn from "./pages/signIn";
+import SignUp from "./pages/signUp";
+import UserProfile from "./pages/userProfile";
+import BackOffice from "./pages/backOffice";
+import BackUser from "./pages/backUser";
+import EditUser from "./pages/editUser";
+
+
 
 function App() {
+
   return (
     <div className="App">
       <Router>
@@ -31,9 +42,26 @@ function App() {
           <Route path="/actualite" element={<Actualite />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/animal" element={<Animal />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signIn" element={<SignIn />} />
+          <Route path="/userProfile" element={<UserProfile />} />
+          <Route path="/backOffice" element={<BackOffice />} />
+          <Route path="/backUser" element={<BackUser />} />
+          <Route path={`/editUser/:id`} element={<EditUser />} />
           <Route path="*" element={<p>Error 404</p>} />
         </Routes>
+
         <Footer />
+
+        <ToastContainer position="top-center"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover />
       </Router>
     </div>
   );

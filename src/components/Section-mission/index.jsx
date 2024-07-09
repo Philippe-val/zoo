@@ -1,8 +1,38 @@
-import React from "react";
-import data from "../../data/data.json";
+import {useEffect,useState} from "react";
+import axios from "axios";
 import "./section-mission.css";
 import MissionCard from "../MissionCard";
+
+
+
+
 const Mission = () => {
+
+  const [missions, setMissions] = useState()
+
+  useEffect(() => {
+    let config = {
+      method: "get",
+      maxBodyLength: Infinity,
+      url: "http://localhost:3000/api/mission",
+      headers: {
+          "Content-Type": "application/json",
+      }
+      
+  };
+  axios
+              .request(config)
+              .then((response) => {
+               
+                  setMissions(response.data.mission);
+              })
+              .catch((error) => {
+                  console.log(error);
+              });  
+  }, [])
+  
+
+
   return (
     <div className="section-mission">
       <div className="mission-title">
@@ -10,7 +40,7 @@ const Mission = () => {
       </div>
       <div className="mission-jumbotron">
       
-      {data.missions.map((mission, index) => (
+      {missions && missions.map((mission, index) => (
         <MissionCard key={index} mission={mission} />
       ))}
     </div>

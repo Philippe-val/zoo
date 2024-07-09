@@ -18,7 +18,7 @@ const Intro = () => {
         </h2>
       </div>
       <div className="intro-right">
-        <img src="image/zoo2.png" className="img-intro" alt="animaux du zoo" />
+        <img src="/image/zoo2.png" className="img-intro" alt="animaux du zoo" />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const AnimalCard= ({animal}) => {
      to="/animal" 
     state={{animal:animal}}
     >
-       <div class=" animal-card-header"> <img src={animal.IMG} alt="" /> </div>
+       <div class=" animal-card-header"> <img src={`/${animal.IMG}`} alt="" /> </div>
        <div class="animal-card-body">
          <h4 class="animal-card-title">{animal.TITLE}</h4>
        
