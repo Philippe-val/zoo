@@ -6,18 +6,18 @@ const BackUser = () => {
     const [users, setUsers] = useState(null);
     console.log(users);
     useEffect(() => {
-        let data;
+       
 
         const API_URL = "http://localhost:3000";
 
         let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: `${API_URL}/api/read`,
+            url: `${API_URL}/api/readUsers`,
             headers: {
                 "Content-Type": "application/json",
             },
-            data: data,
+           
         };
 
         axios

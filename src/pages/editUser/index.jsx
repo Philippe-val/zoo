@@ -21,7 +21,7 @@ const EditUser = () => {
         let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: `${API_URL}/api/readOneUser?id=${id}`,
+            url: `${API_URL}/api/readOneUser?id=${id.id}`,
             headers: {
                 "Content-Type": "application/json",
             },
@@ -54,7 +54,7 @@ const EditUser = () => {
         if (id !== undefined || user.role === "admin") {
             //let errorMessage = null;
             const token = actualUser.token;
-            user.userId = id;
+            user.userId = id.id;
             let data = { user };
             data = JSON.stringify(data);
             console.log(data);
@@ -97,33 +97,33 @@ const EditUser = () => {
 
     return (
         <div className="main">
-            <h2>Mes informations personnelles</h2>
+            <h2>Informations personnelles</h2>
 
             <form onSubmit={handleSubmit}>
                 
                
-                <div className="inputGroup">
-                    <label className="inputLabel" htmlFor="email">
+                <div className="form-group">
+                    <label className="col-sm-2 col-form-label" htmlFor="email">
                         Email
                     </label>
                     <input
                         id="email"
                         aria-label="Entrez votre adresse email"
-                        className="inputField"
+                        className="form-control"
                         type="email"
                         name="email"
                         value={user && user.email}
                         onChange={handleInputChange}
                         required
                     />
-                    <div className="inputGroup">
-                        <label className="inputLabel" htmlFor="password">
+                    <div className="form-group">
+                        <label className="col-sm-2 col-form-label" htmlFor="password">
                             Mot de passe
                         </label>
                         <input
                             id="password"
                             aria-label="Entrez votre mot de passe"
-                            className="inputField"
+                            className="form-control"
                             type="password"
                             name="password"
                             placeholder="Entrez votre mot de passe ou un nouveau"
@@ -132,7 +132,7 @@ const EditUser = () => {
                         />
                     </div>
                 </div>
-                <button className="button" type="submit">Save Changes</button>
+                <button className="btn btn-primary" type="submit">Save Changes</button>
             </form>
         </div>
     );

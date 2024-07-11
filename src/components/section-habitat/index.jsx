@@ -1,12 +1,38 @@
 import Thumb from "../habitat-thumb";
-import data from "../../data/data.json";
 import "./section-habitat.css";
+import { useState,useEffect } from "react";
+import axios from "axios";
+
 
 const Habitat = () => {
+  
+const [habitats, setHabitats] = useState()
+
+useEffect(() => {
+  let config = {
+    method: "get",
+    maxBodyLength: Infinity,
+    url: "http://localhost:3000/api/habitats",
+    headers: {
+        "Content-Type": "application/json",
+    }
+    
+};
+axios
+            .request(config)
+            .then((response) => {
+              
+                setHabitats(response.data.habitats);
+            })
+            .catch((error) => {
+                console.log(error);
+            });  
+}, [])
+
   return (
     <div className="container section-habitat">
       <div className="section-habitat-left">
-        {data.habitats.slice(0, 4).map((thumb, index) => (
+        {habitats && habitats.slice(0, 4).map((thumb, index) => (
           <Thumb key={index} thumb={thumb} />
         ))}
       </div>

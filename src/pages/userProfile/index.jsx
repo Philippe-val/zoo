@@ -100,28 +100,28 @@ const UserProfile = () => {
 
             <form onSubmit={handleSubmit}>
                 
-                <div className="inputGroup">
-                    <label className="inputLabel" htmlFor="email">
+                <div className="form-group">
+                    <label className="col-sm-2 col-form-label" htmlFor="email">
                         Email
                     </label>
                     <input
                         id="email"
                         aria-label="Entrez votre adresse email"
-                        className="inputField"
+                        className="form-control"
                         type="email"
                         name="email"
                         value={user && user.email}
                         onChange={handleInputChange}
                         required
                     />
-                    <div className="inputGroup">
-                        <label className="inputLabel" htmlFor="password">
+                    <div className="form-group">
+                        <label className="col-sm-2 col-form-label" htmlFor="password">
                             Mot de passe
                         </label>
                         <input
                             id="password"
                             aria-label="Entrez votre mot de passe"
-                            className="inputField"
+                            className="form-control"
                             type="password"
                             name="password"
                             placeholder="Entrez votre mot de passe ou un nouveau"
@@ -130,7 +130,7 @@ const UserProfile = () => {
                         />
                     </div>
                 </div>
-                <button className="button" type="submit">Save Changes</button>
+                <button className="btn btn-primary" type="submit">Save Changes</button>
             </form>
         </div>
     );
